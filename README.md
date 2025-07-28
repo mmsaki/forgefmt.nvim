@@ -6,7 +6,7 @@ Format Solidity files on save or via `:ForgeFmt` using `forge fmt`.
 
 ```lua
 return {
-   "mmsaki/forgefmt.nvim"
+  "mmsaki/forgefmt.nvim"
 }
 ```
 
@@ -17,6 +17,6 @@ return {
 
 ```lua
 require("forgefmt").setup({
- auto_format = true,
+  auto_format = true,
 })
 ```
