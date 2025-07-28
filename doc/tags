@@ -1,0 +1,4 @@
+:ForgeFmt	forgefmt.txt	/*:ForgeFmt*
+<leader>f	forgefmt.txt	/*<leader>f*
+forgefmt	forgefmt.txt	/*forgefmt*
+forgefmt.txt	forgefmt.txt	/*forgefmt.txt*

@@ -1,0 +1,42 @@
+*forgefmt.txt*    Plugin for formatting Solidity using Forge
+
+YourPlugin                                        *forgefmt*
+
+INTRODUCTION ~
+This plugin provides a `:ForgeFmt` command to format Solidity files using Foundry.
+
+COMMANDS ~
+
+:ForgeFmt                                          *:ForgeFmt*
+    Formats the current Solidity buffer using `forge fmt`.
+
+MAPPINGS ~
+
+<leader>f                                          *<leader>f*
+    Calls `:ForgeFmt`.
+
+CONFIGURATION ~
+
+You can configure `forgefmt` using the `setup()` function.
+
+Example:
+>
+  require("forgefmt").setup({
+    auto_format = true,
+  })
+<
+
+This will automatically format your Solidity files on save when `auto_format` is `true`.
+
+INSTALLATION ~
+
+Use your favorite plugin manager. Example with lazy.nvim:
+>
+  { "mmsaki/forgefmt.nvim" }
+<
+
+AUTHOR ~
+
+Maintained by Meek Msaki meek10x@gmail.com.
+
+vim:tw=78:ts=8:ft=help:norl:
