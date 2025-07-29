@@ -2,7 +2,15 @@ local M = {}
 
 function M.format()
   local filepath = vim.api.nvim_buf_get_name(0)
+  if filepath == "" or vim.fn.filereadable(filepath) == 0 then
+    vim.notify("[forgefmt] invalid file path", vim.log.levels.WARN)
+    return
+  end
+
+  vim.cmd("write")
+
   vim.fn.jobstart({ "forge", "fmt", filepath }, {
+    stdout_buffered = true,
     on_exit = function(_, code)
       if code == 0 then
         vim.cmd("checktime")
