@@ -9,6 +9,17 @@ return {
   "mmsaki/forgefmt.nvim"
 }
 ```
+Set up auto formatting:
+
+```lua
+return {
+  "mmsaki/forgefmt.nvim",
+  config = function()
+    local forgefmt = require("forgefmt")
+    forgefmt.setup({ auto_format = true })
+  end,
+}
+```
 
 ## Usage
 
