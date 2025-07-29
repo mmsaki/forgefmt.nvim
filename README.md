@@ -1,46 +1,54 @@
-# forgefmt.nvim
+# `forgefmt.nvim` 🔨
 
-Auto-formatting Solidity files on save or via `:ForgeFmt` using `forge fmt`.
+Format Solidity files automatically on save or manually via `:ForgeFmt` — powered by `forge fmt`.
 
 ### 🚀 Features
 
-* 📄 **Formats single files** — no need to set up a full project
-* 🔌 **Standalone-friendly** — works without `foundry.toml`
-* ⚙️ **Smart config detection** — uses `[fmt]` settings from `foundry.toml` if available
-* 💡 **Zero LSP setup required** — works out of the box, no language server needed
-* ✨ **Autoformats on save** — just start editing `.sol` files
-* 🎯 **Manual control available** — run `:ForgeFmt` anytime for explicit formatting
+* 📄 **Single-file support** – works even without a full Foundry project
+* 🔌 **No `foundry.toml` required** – formats standalone Solidity files
+* ⚙️ **Respects project config** – uses `[fmt]` settings from `foundry.toml` if present
+* 💡 **LSP-free** – no language server required to format
+* ✨ **Autoformat on save** – set it and forget it for `.sol` files
+* 🎯 **Manual formatting** – use `:ForgeFmt` anytime
 
-## Installation
+## 📦 Installation
 
 ```lua
 return {
-  "mmsaki/forgefmt.nvim"
+  "mmsaki/forgefmt.nvim",
+  config = function()
+    require("forgefmt").setup({
+      auto_format = true, -- enable autoformat on save
+    })
+  end,
 }
 ```
 
-Then call the setup function:
+Or load manually and call the command:
 
 ```lua
-require("forgefmt").setup({
-   auto_format = true,
+:ForgeFmt
+```
+
+## 🛠 Usage
+
+* Automatically formats `.sol` files on save (if `auto_format = true`)
+* Or trigger manually via `:ForgeFmt`
+* Compatible with both standalone Solidity files and Foundry projects
+
+## 🧠 Optional: LSP Integration
+
+You can plug `forgefmt.nvim` into your existing LSP formatting pipeline using a custom formatter hook.
+
+### Example: override `vim.lsp.buf.format()` for Solidity
+
+```lua
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "solidity",
+  callback = function()
+    vim.lsp.buf.format = function()
+      require("forgefmt").format()
+    end
+  end,
 })
-```
-
-or run manually: `:ForgeFmt`
-
-## Usage
-
-- Auto-runs on `*.sol` save
-
-Plugin setup for Lazy.nvim:
-
-```lua
-return {
-   "mmsaki/forgefmt.nvim",
-   config = function()
-      local forgefmt = require("forgefmt")
-      forgefmt.setup({ auto_format = true })
-   end,
-}
 ```
