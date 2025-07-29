@@ -19,6 +19,7 @@ return {
   config = function()
     require("forgefmt").setup({
       auto_format = true, -- enable autoformat on save
+      use_shafu = false, -- supports shafu formatter 
     })
   end,
 }
