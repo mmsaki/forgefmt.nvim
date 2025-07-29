@@ -12,11 +12,15 @@ function M.format()
   vim.fn.jobstart({ "forge", "fmt", filepath }, {
     stdout_buffered = true,
     on_exit = function(_, code)
+      local filename = vim.fn.fnamemodify(filepath, ":t")
       if code == 0 then
         vim.cmd("checktime")
-        vim.notify("[forgefmt] formatted " .. filepath)
+        vim.notify('[forgefmt] formatted "' .. filename .. '"')
       else
-        vim.notify("[forgefmt] failed", vim.log.levels.ERROR)
+        vim.notify(
+          '[forgefmt] failed"' .. filename .. '"',
+          vim.log.levels.ERROR
+        )
       end
     end,
   })
