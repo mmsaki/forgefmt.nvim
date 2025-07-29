@@ -13,12 +13,12 @@ function M.format()
     stdout_buffered = true,
     on_exit = function(_, code)
       local filename = vim.fn.fnamemodify(filepath, ":t")
-      local lines = string.format("%dL,", vim.api.nvim_buf_line_count(0))
+      local lines = string.format("%dL, ", vim.api.nvim_buf_line_count(0))
       local bytes = string.format("%dB", vim.fn.getfsize(filepath))
       if code == 0 then
         vim.cmd("checktime")
         vim.notify(
-          '[forgefmt] "' .. filename .. '"' .. lines .. bytes .. " witten"
+          '[forgefmt] "' .. filename .. '" ' .. lines .. bytes .. " witten"
         )
       else
         vim.notify(
