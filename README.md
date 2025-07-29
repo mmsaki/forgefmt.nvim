@@ -5,11 +5,11 @@ Format Solidity files automatically on save or manually via `:ForgeFmt` — powe
 ### 🚀 Features
 
 * 📄 **Single-file support** – works even without a full Foundry project
-* 🔌 **No `foundry.toml` required** – formats standalone Solidity files
-* ⚙️ **Respects project config** – uses `[fmt]` settings from `foundry.toml` if present
+* 🔌 **Respects `foundry.toml` project config** – uses `[fmt]` settings from `foundry.toml` if present
 * 💡 **LSP-free** – no language server required to format
 * ✨ **Autoformat on save** – set it and forget it for `.sol` files
 * 🎯 **Manual formatting** – use `:ForgeFmt` anytime
+* ✌🏾  **Shafu formatter - custom `use_shafu` option for experinmental [shafu formatter](https://github.com/shafu0x/shafu-formatter)
 
 ## 📦 Installation
 
