@@ -9,7 +9,7 @@ Format Solidity files automatically on save or manually via `:ForgeFmt` — powe
 * 💡 **LSP-free** – no language server required to format
 * ✨ **Autoformat on save** – set it and forget it for `.sol` files
 * 🎯 **Manual formatting** – use `:ForgeFmt` anytime
-* ✌🏾  **Shafu formatter - custom `use_shafu` option for experinmental [shafu formatter](https://github.com/shafu0x/shafu-formatter)
+* ✌🏾 **Shafu formatter support** – opt into [shafu](https://github.com/shafu0x/shafu-formatter) with `use_shafu = true` if installed in your $PATH
 
 ## 📦 Installation
 
