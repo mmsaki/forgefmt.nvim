@@ -9,25 +9,29 @@ return {
   "mmsaki/forgefmt.nvim"
 }
 ```
-Set up auto formatting:
 
-```lua
-return {
-  "mmsaki/forgefmt.nvim",
-  config = function()
-    local forgefmt = require("forgefmt")
-    forgefmt.setup({ auto_format = true })
-  end,
-}
-```
-
-## Usage
-
-- Auto-runs on *.sol save
-- Run manually: `:ForgeFmt`
+Then call the setup function:
 
 ```lua
 require("forgefmt").setup({
-  auto_format = true,
+   auto_format = true,
 })
+```
+
+or run manually: `:ForgeFmt`
+
+## Usage
+
+- Auto-runs on `*.sol` save
+
+Plugin setup for Lazy.nvim:
+
+```lua
+return {
+   "mmsaki/forgefmt.nvim",
+   config = function()
+      local forgefmt = require("forgefmt")
+      forgefmt.setup({ auto_format = true })
+   end,
+}
 ```
