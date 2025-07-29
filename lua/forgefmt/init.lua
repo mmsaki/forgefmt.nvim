@@ -18,7 +18,7 @@ function M.format()
   local bytes = string.format("%dB", vim.fn.getfsize(filepath))
 
   local cmd = M.config.use_shafu and "shafu" or "forge"
-  local args = M.config.use_shafu and { "--write", filepath }
+  local args = M.config.use_shafu and { filepath, "--write" }
     or { "fmt", filepath }
   local msg = M.config.use_shafu and "[shafu_formatter]" or "[forgefmt]"
 
