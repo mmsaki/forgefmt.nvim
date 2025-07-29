@@ -9,7 +9,12 @@ Format Solidity files automatically on save or manually via `:ForgeFmt` — powe
 * 💡 **LSP-free** – no language server required to format
 * ✨ **Autoformat on save** – set it and forget it for `.sol` files
 * 🎯 **Manual formatting** – use `:ForgeFmt` anytime
-* ✌🏾 **Shafu formatter support** – opt into [shafu](https://github.com/shafu0x/shafu-formatter) with `use_shafu = true` if installed in your $PATH
+
+### ⚠️ Experimental Feature
+
+> 🧪 **Use at your own risk** – this feature is still under active development and may produce unexpected formatting results.
+
+* ✌🏾 **Shafu formatter support** – opt into [`shafu`](https://github.com/shafu0x/shafu-formatter) by setting `use_shafu = true` (requires `shafu` in your `$PATH`)
 
 ## 📦 Installation
 
@@ -19,7 +24,7 @@ return {
   config = function()
     require("forgefmt").setup({
       auto_format = true, -- enable autoformat on save
-      use_shafu = false, -- supports shafu formatter 
+      use_shafu = false,  -- experimental: enable shafu formatter (may break formatting 👀)
     })
   end,
 }
