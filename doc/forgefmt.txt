@@ -12,8 +12,15 @@ COMMANDS ~
 
 MAPPINGS ~
 
+
+This is NOT a default re-mapping but an example
+
 <leader>f                                          *<leader>f*
     Calls `:ForgeFmt`.
+
+>
+    vim.keymap.set("n", "<leader>f", ":ForgeFmt<CR>", { desc = "Forge Format" })
+>
 
 CONFIGURATION ~
 

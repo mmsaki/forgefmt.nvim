@@ -30,6 +30,26 @@ Or load manually and call the command:
 :ForgeFmt
 ```
 
+optional re-mappings:
+
+This is NOT a default re-mapping but an example
+
+| Keys | Mode | Description |
+|------|------|-------------|
+| <kbd>space</kbd> → <kbd>f</kbd> | Normal | Forge Format |
+
+```lua
+return {
+  "mmsaki/forgefmt.nvim",
+  config = function()
+    require("forgefmt").setup({
+      auto_format = true, -- enable autoformat on save
+    })
+    vim.keymap.set("n", "<leader>f", ":ForgeFmt<CR>", { desc = "Forge Format" })
+  end,
+}
+```
+
 ## 🛠 Usage
 
 * Automatically formats `.sol` files on save (if `auto_format = true`)
