@@ -11,8 +11,6 @@ function M.format()
     return
   end
 
-  vim.cmd("write")
-
   local filename = vim.fn.fnamemodify(filepath, ":t")
   local lines = string.format("%dL,", vim.api.nvim_buf_line_count(0))
   local bytes = string.format("%dB", vim.fn.getfsize(filepath))
